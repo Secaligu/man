@@ -1,0 +1,111 @@
+.panel{
+    border-radius: 10px;
+    padding: 20px;
+    background-color: brown;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgb(70, 115, 249);
+    animation: fadein 0.5 ease;
+    display: none;
+}
+
+body,h1,h2,p{
+    margin: 0;
+    padding: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: blue;
+    color: azure;
+    text-align: center;
+    padding: 20px;
+}
+/* estilo de titulo mejorado*/
+
+header h1{
+    font-size: 3rem; /*tamaño mas grande para tener un mayor impacto*/
+    text-transform: uppercase;
+    letter-spacing: 4px;/* espacio entre palabras*/
+    margin: 0;
+    animation: grow 1.5s infinite alternate;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(90deg, rgb(0, 106, 255) rgb(255, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /*efecto de degradado en el texto*/
+    text-shadow: 0, 0, 10px rgb(255, 183, 0) 0,0,5;/*sombreado para mayor profundidad*/
+}
+/*animado debajo del titulo*/
+header::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 120%;
+    height: 150%;
+    background: radial-gradient(circle, rbg(987, 987, 321)transform 70%);
+    z-index: 0;
+    animation: pulse 6s infinite;
+    border-radius: 50%;
+
+}
+/*animacion del pulso*/
+@keyframes pulse {
+    0%{
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: translate(-50%, -50%) scale(1,2);
+        opacity: 0.6;
+    }
+    100%{
+        transform: translate(-50%, -50%)scale(1);
+        opacity: 1;
+    }
+}
+ p{
+    color: black;
+ }
+ h1{
+    font-size: 2rem;
+ }
+
+ main{
+    max-width: 600px;
+    margin: 0 auto;
+    position:relative;
+ }
+ .panel img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+ }
+ .panel2 h2{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+ }
+
+ #panel1:checked~#content-panel1,
+ #panel2:checked~#content-panel2,
+ #panel3:checked~#content-panel3,
+ #panel4:checked~#content-panel4,
+ #panel5:checked~#content-panel5
+ {
+    display: block;
+ }
+ /*animacion*/
+ @keyframes fadein{
+   from {
+    opacity: 0;
+    transform:transition
+
+   }
+   to{
+     opacity: 1;
+     transform: translate(0);
+   }
+}
+
+
